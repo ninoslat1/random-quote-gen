@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-blue-600 font-qs
+  }
+}
+
+@layer components {
+  #quote-box {
+    @apply text-center bg-white my-[30vh] mx-[2.5vw] md:my-[30vh] md:mx-[25vw] rounded-md p-5
+  }
+  #text{
+    @apply text-3xl p-5 italic
+  }
+
+  #author{
+    @apply text-end italic py-2.5
+  }
+
+  #button {
+    @apply flex justify-evenly items-center
+  }
+
+  .social-media {
+    @apply inline-flex w-full lg:w-1/2 justify-start
+  }
+
+  .social-media > a {
+    @apply bg-blue-600 px-2.5 py-2.5 rounded-full duration-500
+  }
+
+  .social-media > a:hover {
+    @apply bg-white 
+  }
+
+  .social-media > #sound {
+    @apply hover:text-[#1877F2] duration-700
+  }
+
+  .social-media > #facebook-quote {
+    @apply hover:text-[#1877F2] duration-700
+  }
+
+  .social-media > #tweet-quote {
+    @apply hover:text-[#1DA1F2] duration-700
+  }
+
+  .social-media > #sound > svg {
+    @apply w-4 h-4 md:w-8 md:h-8
+  }
+
+  .social-media > #facebook-quote > svg {
+    @apply w-4 h-4 md:w-8 md:h-8
+  }
+
+  .social-media > #tweet-quote > svg {
+    @apply w-4 h-4 md:w-8 md:h-8
+  }
+
+  #new-quote {
+    @apply bg-blue-600 p-2.5 rounded-lg text-white duration-500 text-xs md:text-base
+  }
+
+  #new-quote:hover {
+    @apply bg-white text-blue-600 border-blue-600
+  }
+}
