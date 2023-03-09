@@ -1,6 +1,8 @@
-import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react'
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Quote = () => {
     const [quote, setQuote] = useState('title');
@@ -28,17 +30,24 @@ const Quote = () => {
 
     const handleClick = () => {
         getQuote();
+        toast.success('Quote have been generated',{
+            autoClose: 1000
+        })
     }
-    
+
     const voiceClick = (e) => {
         const text = `${quote} by ${author}`
         const value = new SpeechSynthesisUtterance(text);
         window.speechSynthesis.speak(value);
+        toast.success('Quote have been transformed to text',{
+            autoClose: 1000
+        })
         e.preventDefault();
     }
 
     return (
         <div id="quote-box">
+            <ToastContainer theme="colored" closeOnClick={false} pauseOnHover={false}/>
             <div id="text">
                 <p id="quote">"{quote}"</p>
             </div>
